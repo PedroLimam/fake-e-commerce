@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const ContainerNav = styled.nav`
     position: relative;
     
-
     .containerNav__img{
         position: absolute;
         top: 15px;
@@ -14,22 +13,6 @@ export const ContainerNav = styled.nav`
             transform: scale(1.1);
         }
         cursor: pointer;
-    }
-
-    .containerNav__img--active{
-        animation-name: active;
-        animation-duration: 400ms;
-        animation-direction: alternate-reverse;
-    }
-
-    @keyframes active {
-        from{
-            transform: translateX(0);
-        }
-
-        to{
-            transform: translateY(-8px);
-        }
     }
 
     .containerNav__button-quantity{

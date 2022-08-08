@@ -3,7 +3,9 @@ import { Button } from "./style";
 
 function ButtonSelected({addProductToCart}){
     return(
-        <Button>Comprar</Button>
+        <Button onClick={(e) => {
+            addProductToCart(e.target.parentNode)
+        }}>Comprar</Button>
     )
 }
 

@@ -1,7 +1,5 @@
 import { css } from "styled-components";
 
-
-
 export const testeFlex = css`
     display: flex;
     flex-direction: column;

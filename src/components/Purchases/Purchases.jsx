@@ -1,9 +1,19 @@
-import React from "react";
-
+import React, { useState } from "react";
+import CardShoppingCart from "../CardShoppingCart/CardShoppingCart";
 import { ContainerPurchases } from "./style";
 
 
-function Purchases({ disable}){  
+function Purchases({selectedProducts, disable}){  
+    const [totalPurchase, setTotalPurchase] = useState(0)
+
+    function calcTotalPurchase (){ 
+        let calcTotal = 0
+
+        for(let index in selectedProducts){
+            calcTotal = calcTotal + selectedProducts[index].preço2
+            setTotalPurchase(calcTotal.toLocaleString("pt-BR"))
+        }
+    }
 
     return(
         <ContainerPurchases>
@@ -11,9 +21,10 @@ function Purchases({ disable}){
             <h2 className="containerPurchases__title">Suas compras</h2>
 
             <div className="containerPurchases__products">
+            {selectedProducts.map((el, index) => <CardShoppingCart calcTotalPurchase={calcTotalPurchase} saleByProduct={el.saleByProduct} key={index} name={el.nome} img_url={el.url} />)}
             </div>
 
-            <h3 className="containerPurchases__sum">Total: R$ </h3>
+            <h3 className="containerPurchases__sum">Total: R$ {totalPurchase}</h3>
         </ContainerPurchases>
     )
 }

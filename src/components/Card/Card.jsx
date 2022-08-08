@@ -5,7 +5,7 @@ import ButtonSelected from "../ButtonSelected/ButtonSelected";
 import { Container } from "./style";
 
 
-function Card({name, price, img_url}){
+function Card({name, price, img_url, addProductToCart}){
 
     return(
         <Container>
@@ -15,7 +15,7 @@ function Card({name, price, img_url}){
 
             <h3 className="container__price"> R$ {price}</h3>
 
-            < ButtonSelected/>
+            < ButtonSelected addProductToCart={(e) => addProductToCart(e)}/>
         </Container>
     )
 }
