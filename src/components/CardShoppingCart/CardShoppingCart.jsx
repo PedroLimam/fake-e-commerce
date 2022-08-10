@@ -3,26 +3,31 @@ import { ButtonQuantity } from "../ButtonQuantity/ButtonQuantity";
 import { ContainerShoppping } from "./style";
 
 
-function CardShoppingCart({name, img_url, saleByProduct, calcTotalPurchase}){
+function CardShoppingCart({name, img_url, saleByProduct, calcTotalPurchase, selectedProducts, updatesSelectedProducts}){
     const [counterQuantity, setCounterQuantity] = useState(0)
 
     useEffect(() => {
-        saleByProduct(counterQuantity)  
+        saleByProduct(counterQuantity)
         calcTotalPurchase()
-        
-    },[counterQuantity])
+    },[counterQuantity, calcTotalPurchase, saleByProduct])
 
     function adcQuantity(){
         setCounterQuantity(counterQuantity + 1)
     }
+
     function decreaseQuantity(){
         if(counterQuantity === 0) return
         setCounterQuantity(counterQuantity - 1)
     }
   
+    function deleteProduct(e){
+        const newProdutos = selectedProducts.filter(el => el.nome !== name)
+        updatesSelectedProducts(newProdutos)
+    }
 
     return(
-        <ContainerShoppping>
+        <ContainerShoppping >
+            <p onClick={deleteProduct}>X</p>
 
             <div className="containerShopping__box-productRepresentation">
                 <img className="containerShopping__img" src={img_url} alt="imagem do produto" />
@@ -33,8 +38,7 @@ function CardShoppingCart({name, img_url, saleByProduct, calcTotalPurchase}){
                 <ButtonQuantity onClick={adcQuantity}>+</ButtonQuantity>
                 <h2>{counterQuantity}</h2>
                 <ButtonQuantity onClick={decreaseQuantity}>-</ButtonQuantity>
-            </div>
-            
+            </div>      
         </ContainerShoppping>
     )
 }

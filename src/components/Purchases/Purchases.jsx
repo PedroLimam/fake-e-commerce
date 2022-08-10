@@ -3,9 +3,9 @@ import CardShoppingCart from "../CardShoppingCart/CardShoppingCart";
 import { ContainerPurchases } from "./style";
 
 
-function Purchases({selectedProducts, disable}){  
+function Purchases({selectedProducts, updatesSelectedProducts, disable}){  
     const [totalPurchase, setTotalPurchase] = useState(0)
-
+   
     function calcTotalPurchase (){ 
         let calcTotal = 0
 
@@ -21,7 +21,7 @@ function Purchases({selectedProducts, disable}){
             <h2 className="containerPurchases__title">Suas compras</h2>
 
             <div className="containerPurchases__products">
-            {selectedProducts.map((el, index) => <CardShoppingCart calcTotalPurchase={calcTotalPurchase} saleByProduct={el.saleByProduct} key={index} name={el.nome} img_url={el.url} />)}
+            {selectedProducts.map((el, index) => <CardShoppingCart updatesSelectedProducts={updatesSelectedProducts} selectedProducts={selectedProducts} calcTotalPurchase={calcTotalPurchase} saleByProduct={el.saleByProduct} key={index} name={el.nome} img_url={el.url} />)}
             </div>
 
             <h3 className="containerPurchases__sum">Total: R$ {totalPurchase}</h3>

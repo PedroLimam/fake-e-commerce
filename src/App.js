@@ -3,8 +3,8 @@ import Card from "./components/Card/Card";
 import Nav from "./components/Nav/Nav";
 
 function App() {
-  const [selectedProducts, setSelectedProducts] = useState([])
   const [arrayProducts, setArrayProducts] = useState([])
+  const [selectedProducts, setSelectedProducts] = useState([])
 
   useEffect(()=> {
     async function getData(){
@@ -12,20 +12,24 @@ function App() {
       const response = await getApi.json()
       setArrayProducts(response)
     }
+
     getData()
   },[])
 
+  function updatesSelectedProducts(productsSelectedActual){
+    setSelectedProducts(productsSelectedActual)
+  }
+
   function addProductToCart(e){
-    const elementoObjeto = {
+    const newProduto = {
       nome: e.children[1].innerText,
       url: e.children[0].src,
       preço: e.children[2].innerText,
       preço2: 0,
 
       saleByProduct(quantity){
-        elementoObjeto.preço2 = Number(elementoObjeto.preço.replace(/[^0-9-.]/g,'')) * quantity
+        newProduto.preço2 = Number(newProduto.preço.replace(/[^0-9-.]/g,'')) * quantity
       }
-
     }
     
     for(let index in selectedProducts){
@@ -35,14 +39,13 @@ function App() {
       }
     }
     
-    setSelectedProducts([...selectedProducts, elementoObjeto])      
+    setSelectedProducts([...selectedProducts, newProduto])      
   }
-
   
   return (
     <>
       <header>
-        <Nav selectedProducts={selectedProducts}/>
+        <Nav updatesSelectedProducts={updatesSelectedProducts} selectedProducts={selectedProducts}/>
       </header>
 
       <main>
