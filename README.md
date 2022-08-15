@@ -4,7 +4,7 @@
 ### Funcionalidades a adicionar:
 - [x] Renderização de elementos no carrinho de compras
 - [x] Excluir elementos do carrinho 
-- [ ] Cálculo dos elementos do adicioados ao carrinho 
+- [ ] Cálculo dos elementos do adicionados ao carrinho 
 
 Esse projeto tem como foco criar uma aplicação que simula um E-commerce real, ou seja, que tenha funcionalidades que se presencia, 
 como ter <strong>variados produtos</strong>, conseguir <strong>adicionar e remover elementos do carrinho</strong>,
