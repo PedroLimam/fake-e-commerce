@@ -5,6 +5,7 @@
 - [x] Renderização de elementos no carrinho de compras
 - [x] Excluir elementos do carrinho 
 - [ ] Cálculo dos elementos do adicionados ao carrinho 
+- [ ] Context API para gerenciamento de states.
 - [ ] Filtros de pesquisa
 
 
