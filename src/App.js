@@ -5,8 +5,9 @@ import Nav from "./components/Nav/Nav";
 function App() {
   const [arrayProducts, setArrayProducts] = useState([])
   const [selectedProducts, setSelectedProducts] = useState([])
+  const [totalPurchase, setTotalPurchase] = useState(0)
 
-  useEffect(()=> {
+  useEffect(() => {
     async function getData(){
       const getApi = await fetch('https://fakestoreapi.com/products')
       const response = await getApi.json()
@@ -17,8 +18,23 @@ function App() {
   },[])
 
   function updatesSelectedProducts(productsSelectedActual){
-    setSelectedProducts(productsSelectedActual)
+    setSelectedProducts([...productsSelectedActual])
+    console.log(selectedProducts)
   }
+
+  useEffect(() => {
+    console.log(selectedProducts)
+  }, [selectedProducts])
+
+  useEffect(() => {
+    let calcTotal = 0
+
+        for(let index in selectedProducts){
+            calcTotal = calcTotal + selectedProducts[index].preço2
+        }
+
+        setTotalPurchase(calcTotal.toLocaleString("pt-BR"))
+  }, [selectedProducts])
 
   function addProductToCart(e){
     const newProduto = {
@@ -45,7 +61,7 @@ function App() {
   return (
     <>
       <header>
-        <Nav updatesSelectedProducts={updatesSelectedProducts} selectedProducts={selectedProducts}/>
+        <Nav totalPurchase={totalPurchase} updatesSelectedProducts={updatesSelectedProducts} selectedProducts={selectedProducts}/>
       </header>
 
       <main>
