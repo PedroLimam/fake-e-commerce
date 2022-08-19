@@ -15,7 +15,8 @@ como ter <strong>variados produtos</strong>, conseguir <strong>adicionar e remov
 
 <strong>Styled-Components -</strong>Biblioteca que permite a construção de css em arquivo JavaScript (css in js), a mesma permite uso do css do componente ao mesmo nível de arquivo.
 
-<strong>BEM CSS -</strong> Metodologia de nomenclatura de classes no css, com foco em melhorar a vizualização e reuso.
+<strong>BEM CSS -</strong> Metodologia de nomenclatura CSS, com foco em melhorar organização, identificação, reuso e manutenção.
+
 
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
