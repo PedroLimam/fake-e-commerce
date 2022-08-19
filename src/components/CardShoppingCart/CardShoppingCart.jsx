@@ -22,9 +22,9 @@ function CardShoppingCart({name, img_url, quantity, selectedProducts, updatesSel
         const productsFilter = [...selectedProducts]
 
         for(let produto in productsFilter){
-            if(productsFilter[produto].name === name & productsFilter[produto].quantidade > 1){
-                productsFilter[produto].quantidade --
-                productsFilter[produto].totalSales = productsFilter[produto].quantidade * productsFilter[produto].price2
+            if(productsFilter[produto].name === name & productsFilter[produto].quantity > 1){
+                productsFilter[produto].quantity --
+                productsFilter[produto].totalSales = productsFilter[produto].quantity * productsFilter[produto].price2
             }
         } 
 
