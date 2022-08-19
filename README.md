@@ -1,6 +1,6 @@
 # Aplicação Fake E-commerce
 
-Esse projeto tem como foco criar uma aplicação que simula um E-commerce real, ou seja, uma aplicação com funcionalidades comuns aos reais, 
+Esse projeto tem como foco criar uma aplicação que simula um E-commerce real, ou seja, uma aplicação com funcionalidades comuns a um e-commerce real, 
 como ter <strong>variados produtos</strong>, conseguir <strong>adicionar e remover elementos do carrinho</strong>,
 <strong>adicionar ou diminuir a quantidade</strong> a ser comprada, e ter o <strong>valor total ser comprado</strong> calculado e visualizavel.
 
