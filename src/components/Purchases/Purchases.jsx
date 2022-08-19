@@ -2,7 +2,6 @@ import React from "react";
 import CardShoppingCart from "../CardShoppingCart/CardShoppingCart";
 import { ContainerPurchases } from "./style";
 
-
 function Purchases({selectedProducts, updatesSelectedProducts, disable, totalPurchase}){  
 
     return(
@@ -11,7 +10,7 @@ function Purchases({selectedProducts, updatesSelectedProducts, disable, totalPur
             <h2 className="containerPurchases__title">Suas compras</h2>
 
             <div className="containerPurchases__products">
-            {selectedProducts.map((el, index) => <CardShoppingCart updatesSelectedProducts={updatesSelectedProducts} selectedProducts={selectedProducts}  saleByProduct={el.saleByProduct} key={index} name={el.nome} img_url={el.url} />)}
+            {selectedProducts.map((el, index) => <CardShoppingCart key={index} name={el.name} img_url={el.url} quantity={el.quantity} updatesSelectedProducts={updatesSelectedProducts} selectedProducts={selectedProducts}/>)}
             </div>
 
             <h3 className="containerPurchases__sum">Total: R$ {totalPurchase}</h3>

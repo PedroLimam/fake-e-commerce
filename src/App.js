@@ -17,45 +17,38 @@ function App() {
     getData()
   },[])
 
-  function updatesSelectedProducts(productsSelectedActual){
-    setSelectedProducts([...productsSelectedActual])
-    console.log(selectedProducts)
-  }
-
-  useEffect(() => {
-    console.log(selectedProducts)
-  }, [selectedProducts])
-
   useEffect(() => {
     let calcTotal = 0
+    
+    for(let index in selectedProducts){
+      calcTotal = calcTotal + selectedProducts[index].totalSales
+    }
 
-        for(let index in selectedProducts){
-            calcTotal = calcTotal + selectedProducts[index].preço2
-        }
-
-        setTotalPurchase(calcTotal.toLocaleString("pt-BR"))
+      setTotalPurchase(calcTotal.toLocaleString("pt-BR"))
   }, [selectedProducts])
 
   function addProductToCart(e){
     const newProduto = {
-      nome: e.children[1].innerText,
+      name: e.children[1].innerText,
       url: e.children[0].src,
-      preço: e.children[2].innerText,
-      preço2: 0,
-
-      saleByProduct(quantity){
-        newProduto.preço2 = Number(newProduto.preço.replace(/[^0-9-.]/g,'')) * quantity
-      }
+      price: e.children[2].innerText,
+      price2: Number(e.children[2].innerText.replace(/[^0-9-.]/g,'')),
+      quantity: 1,
+      totalSales: Number(e.children[2].innerText.replace(/[^0-9-.]/g,''))
     }
     
     for(let index in selectedProducts){
-      if(selectedProducts[index].nome === e.children[1].innerText){
+      if(selectedProducts[index].name === e.children[1].innerText){
         alert('Esse produto já foi adicionado!')
         return
       }
     }
     
     setSelectedProducts([...selectedProducts, newProduto])      
+  }
+
+  function updatesSelectedProducts(productsSelectedActual){
+    setSelectedProducts(productsSelectedActual)
   }
   
   return (

@@ -1,27 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ButtonQuantity } from "../ButtonQuantity/ButtonQuantity";
 import { ContainerShoppping } from "./style";
 
 
-function CardShoppingCart({name, img_url, saleByProduct, selectedProducts, updatesSelectedProducts}){
-    const [counterQuantity, setCounterQuantity] = useState(1)
+function CardShoppingCart({name, img_url, quantity, selectedProducts, updatesSelectedProducts}){
 
-    useEffect(() => {
-        saleByProduct(counterQuantity)
-        
-    },[counterQuantity, saleByProduct, selectedProducts, updatesSelectedProducts])
+    function addQuantity(){
+        const productsFilter = [...selectedProducts]
 
-    function adcQuantity(){
-        setCounterQuantity(counterQuantity + 1)
-    }
+        for(let produto in productsFilter){
+            if(productsFilter[produto].name === name){
+                productsFilter[produto].quantity ++
+                productsFilter[produto].totalSales = productsFilter[produto].quantity * productsFilter[produto].price2
+            }
+        } 
+
+        updatesSelectedProducts(productsFilter)
+    } 
 
     function decreaseQuantity(){
-        if(counterQuantity === 0) return
-        setCounterQuantity(counterQuantity - 1)
+        const productsFilter = [...selectedProducts]
+
+        for(let produto in productsFilter){
+            if(productsFilter[produto].name === name & productsFilter[produto].quantidade > 1){
+                productsFilter[produto].quantidade --
+                productsFilter[produto].totalSales = productsFilter[produto].quantidade * productsFilter[produto].price2
+            }
+        } 
+
+        updatesSelectedProducts(productsFilter)
     }
   
-    function deleteProduct(e){
-        const newProdutos = selectedProducts.filter(el => el.nome !== name)
+    function deleteProduct(){
+        const newProdutos = selectedProducts.filter(el => el.name !== name)
         updatesSelectedProducts(newProdutos)
     }
 
@@ -35,8 +46,8 @@ function CardShoppingCart({name, img_url, saleByProduct, selectedProducts, updat
             </div>
 
             <div  className="containerShopping__box-counterQuantity">
-                <ButtonQuantity onClick={adcQuantity}>+</ButtonQuantity>
-                <h2>{counterQuantity}</h2>
+                <ButtonQuantity onClick={addQuantity}>+</ButtonQuantity>
+                <h2>{quantity}</h2>
                 <ButtonQuantity onClick={decreaseQuantity}>-</ButtonQuantity>
             </div>      
         </ContainerShoppping>
