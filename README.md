@@ -23,5 +23,6 @@ como ter <strong>variados produtos</strong>, conseguir <strong>adicionar e remov
 
 ### Funcionalidades a adicionar:
 - [ ] Context API para gerenciamento de states.
+- [ ] Paginação dos produtos
 - [ ] Filtros de pesquisa
 
