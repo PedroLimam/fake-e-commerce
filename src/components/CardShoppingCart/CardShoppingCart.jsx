@@ -10,7 +10,7 @@ function CardShoppingCart({name, img_url, quantity, selectedProducts, updatesSel
 
         for(let produto in productsFilter){
             if(productsFilter[produto].name === name){
-                productsFilter[produto].quantity ++
+                productsFilter[produto].addQuantity()
                 productsFilter[produto].totalSales = productsFilter[produto].quantity * productsFilter[produto].price2
             }
         } 
@@ -19,14 +19,16 @@ function CardShoppingCart({name, img_url, quantity, selectedProducts, updatesSel
     } 
 
     function decreaseQuantity(){
-        const productsFilter = [...selectedProducts]
+        const productsFilter = [...selectedProducts]     
 
         for(let produto in productsFilter){
+            if(productsFilter[produto].name === name & productsFilter[produto].quantity === 1) return
+
             if(productsFilter[produto].name === name & productsFilter[produto].quantity > 1){
-                productsFilter[produto].quantity --
+                productsFilter[produto].decreaseQuantity()
                 productsFilter[produto].totalSales = productsFilter[produto].quantity * productsFilter[produto].price2
             }
-        } 
+        }
 
         updatesSelectedProducts(productsFilter)
     }

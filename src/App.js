@@ -34,9 +34,17 @@ function App() {
       price: e.children[2].innerText,
       price2: Number(e.children[2].innerText.replace(/[^0-9-.]/g,'')),
       quantity: 1,
-      totalSales: Number(e.children[2].innerText.replace(/[^0-9-.]/g,''))
-    }
+      totalSales: Number(e.children[2].innerText.replace(/[^0-9-.]/g,'')), 
     
+      addQuantity(){
+        this.quantity ++
+      },
+
+      decreaseQuantity(){
+        this.quantity --
+      }
+    }
+  
     for(let index in selectedProducts){
       if(selectedProducts[index].name === e.children[1].innerText){
         alert('Esse produto já foi adicionado!')
