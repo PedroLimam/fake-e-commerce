@@ -29,7 +29,7 @@ function App() {
 
   function addProductToCart(e){
     const newProduto = {
-      name: e.children[1].innerText,
+      name: `${e.children[1].innerText.split(" ").splice(0,7).join(' ')}...`,
       url: e.children[0].src,
       price: e.children[2].innerText,
       price2: Number(e.children[2].innerText.replace(/[^0-9-.]/g,'')),
@@ -46,7 +46,7 @@ function App() {
     }
   
     for(let index in selectedProducts){
-      if(selectedProducts[index].name === e.children[1].innerText){
+      if(selectedProducts[index].name === newProduto.name){
         alert('Esse produto já foi adicionado!')
         return
       }

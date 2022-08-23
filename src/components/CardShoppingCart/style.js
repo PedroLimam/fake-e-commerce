@@ -3,7 +3,7 @@ import { colorButtonPurchase, colorGrayMain, colorWhite, flexCenter } from "../.
 
 export const ContainerShoppping = styled.div`
     width: 260px;
-    height: 104px;
+    height: 112px;
     background-color: ${colorGrayMain};
     border-radius: 8px;
     display: flex;
@@ -31,6 +31,7 @@ export const ContainerShoppping = styled.div`
     .containerShopping__box-productRepresentation{
         ${flexCenter}
         justify-content: space-between;
+        margin-bottom: 5px;
 
         .containerShopping__img{
         width: 35px;
