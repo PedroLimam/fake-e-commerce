@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/fake-e-commerce/static/js/main.72fe7925.js",
+    "static/js/787.b1a8c4cc.chunk.js": "/fake-e-commerce/static/js/787.b1a8c4cc.chunk.js",
+    "index.html": "/fake-e-commerce/index.html",
+    "main.72fe7925.js.map": "/fake-e-commerce/static/js/main.72fe7925.js.map",
+    "787.b1a8c4cc.chunk.js.map": "/fake-e-commerce/static/js/787.b1a8c4cc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.72fe7925.js"
+  ]
+}
