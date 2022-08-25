@@ -6,7 +6,7 @@ como ter <strong>variados produtos</strong>, conseguir <strong>adicionar e remov
 
 
 
-<strong>Acesse:  </strong>
+<strong>Acesse: https://pedrolimam.github.io/fake-e-commerce/ </strong>
 
 
 ## 🛠️ Construído com
