@@ -22,7 +22,6 @@ como ter <strong>variados produtos</strong>, conseguir <strong>adicionar e remov
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
 ### Funcionalidades a adicionar:
-- [ ] Context API para gerenciamento de states.
 - [ ] Paginação dos produtos
 - [ ] Filtros de pesquisa
 
