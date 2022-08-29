@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AddToCardContext } from "../../contexts/AddToCart";
 import CardShoppingCart from "../CardShoppingCart/CardShoppingCart";
 import { ContainerPurchases } from "./style";
 
-function Purchases({selectedProducts, updatesSelectedProducts, disable, totalPurchase}){  
+function Purchases({disable}){  
+
+    const {totalPurchase, selectedProducts} = useContext(AddToCardContext)
 
     return(
         <ContainerPurchases>
@@ -10,7 +13,7 @@ function Purchases({selectedProducts, updatesSelectedProducts, disable, totalPur
             <h2 className="containerPurchases__title">Suas compras</h2>
 
             <div className="containerPurchases__products">
-            {selectedProducts.map((el, index) => <CardShoppingCart key={index} name={el.name} img_url={el.url} quantity={el.quantity} updatesSelectedProducts={updatesSelectedProducts} selectedProducts={selectedProducts}/>)}
+            {selectedProducts.map((el, index) => <CardShoppingCart key={index} name={el.name} img_url={el.url} quantity={el.quantity}/>)}
             </div>
 
             <h3 className="containerPurchases__sum">Total: R$ {totalPurchase}</h3>

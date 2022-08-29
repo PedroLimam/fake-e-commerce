@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AddToCardContext } from "../../contexts/AddToCart";
 import { ButtonQuantity } from "../ButtonQuantity/ButtonQuantity";
 import { ContainerShoppping } from "./style";
 
 
-function CardShoppingCart({name, img_url, quantity, selectedProducts, updatesSelectedProducts}){
+function CardShoppingCart({name, img_url, quantity}){
+
+    const {selectedProducts, updatesSelectedProducts} = useContext(AddToCardContext)
 
     function addQuantity(){
         const productsFilter = [...selectedProducts]

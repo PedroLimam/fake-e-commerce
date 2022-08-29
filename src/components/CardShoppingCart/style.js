@@ -10,7 +10,7 @@ export const ContainerShoppping = styled.div`
     flex-direction: column;
     justify-content: space-around;
     padding: 10px;
-
+    
     .containerShopping__button-delete{
         width: 20px;
         padding: 2px 4px;
@@ -44,7 +44,6 @@ export const ContainerShoppping = styled.div`
         }
     }
     
-
     .containerShopping__box-counterQuantity{
         font-size: 20;
         ${flexCenter}

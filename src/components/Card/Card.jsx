@@ -1,9 +1,12 @@
 import React from "react";
+import { useContext } from "react";
+import { AddToCardContext } from "../../contexts/AddToCart";
 import ButtonSelected from "../ButtonSelected/ButtonSelected";
 import { Container } from "./style";
 
 
-function Card({name, price, img_url, addProductToCart}){
+function Card({name, price, img_url}){
+    const {addProductToCart} = useContext(AddToCardContext)
 
     return(
         <Container>

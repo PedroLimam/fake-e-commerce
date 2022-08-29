@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import Card from "./components/Card/Card";
 import Nav from "./components/Nav/Nav";
+import AddCardContextProvider from "./contexts/AddToCart";
 
 function App() {
   const [arrayProducts, setArrayProducts] = useState([])
-  const [selectedProducts, setSelectedProducts] = useState([])
-  const [totalPurchase, setTotalPurchase] = useState(0)
-
   useEffect(() => {
     async function getData(){
       const getApi = await fetch('https://fakestoreapi.com/products')
@@ -16,59 +14,17 @@ function App() {
 
     getData()
   },[])
-
-  useEffect(() => {
-    let calcTotal = 0
-    
-    for(let index in selectedProducts){
-      calcTotal = calcTotal + selectedProducts[index].totalSales
-    }
-
-      setTotalPurchase(calcTotal.toLocaleString("pt-BR"))
-  }, [selectedProducts])
-
-  function addProductToCart(e){
-    const newProduto = {
-      name: `${e.children[1].innerText.split(" ").splice(0,7).join(' ')}...`,
-      url: e.children[0].src,
-      price: e.children[2].innerText,
-      price2: Number(e.children[2].innerText.replace(/[^0-9-.]/g,'')),
-      quantity: 1,
-      totalSales: Number(e.children[2].innerText.replace(/[^0-9-.]/g,'')), 
-    
-      addQuantity(){
-        this.quantity ++
-      },
-
-      decreaseQuantity(){
-        this.quantity --
-      }
-    }
-  
-    for(let index in selectedProducts){
-      if(selectedProducts[index].name === newProduto.name){
-        alert('Esse produto já foi adicionado!')
-        return
-      }
-    }
-    
-    setSelectedProducts([...selectedProducts, newProduto])      
-  }
-
-  function updatesSelectedProducts(productsSelectedActual){
-    setSelectedProducts(productsSelectedActual)
-  }
   
   return (
-    <>
+    <AddCardContextProvider> 
       <header>
-        <Nav totalPurchase={totalPurchase} updatesSelectedProducts={updatesSelectedProducts} selectedProducts={selectedProducts}/>
+        <Nav/>
       </header>
 
       <main>
-        {arrayProducts.map(el => <Card key={el.id} name={el.title} price={el.price} img_url={el.image} addProductToCart={addProductToCart} />)  }
-      </main>  
-    </>
+        {arrayProducts.map(el => <Card key={el.id} name={el.title} price={el.price} img_url={el.image}/>)}
+      </main>   
+    </AddCardContextProvider>
   );
 }
 
