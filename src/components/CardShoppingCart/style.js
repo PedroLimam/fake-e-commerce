@@ -10,7 +10,8 @@ export const ContainerShoppping = styled.div`
     flex-direction: column;
     justify-content: space-around;
     padding: 10px;
-    
+    position: relative;
+
     .containerShopping__button-delete{
         width: 20px;
         padding: 2px 4px;
@@ -22,6 +23,9 @@ export const ContainerShoppping = styled.div`
         text-align: center;
         cursor: pointer;
         transition: 400ms ease;
+        position: absolute;
+        right: 5px;
+        top: 7px;
 
         :hover{
             transform: translateY(-3px)
@@ -30,7 +34,6 @@ export const ContainerShoppping = styled.div`
 
     .containerShopping__box-productRepresentation{
         ${flexCenter}
-        justify-content: space-between;
         margin-bottom: 5px;
 
         .containerShopping__img{
@@ -39,7 +42,7 @@ export const ContainerShoppping = styled.div`
         } 
 
         .containerShopping__name{
-            width: 80%;
+            width: 70%;
             font-size: 15px;
         }
     }

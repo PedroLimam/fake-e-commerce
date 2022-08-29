@@ -51,9 +51,9 @@ function CardShoppingCart({name, img_url, quantity}){
             </div>
 
             <div  className="containerShopping__box-counterQuantity">
-                <ButtonQuantity onClick={addQuantity}>+</ButtonQuantity>
-                <h2>{quantity}</h2>
                 <ButtonQuantity onClick={decreaseQuantity}>-</ButtonQuantity>
+                <h2>{quantity}</h2>
+                <ButtonQuantity onClick={addQuantity}>+</ButtonQuantity>
             </div>      
         </ContainerShoppping>
     )
