@@ -6,7 +6,7 @@ export const ButtonQuantity = styled.button`
     border-radius: 4px;
     color: ${colorBlackGeneral};
     height: 24px;
-    width: 24px;
+    width: 30px;
     padding: 4px 8PX;
     font-size: 14px;
     font-weight: bolder;

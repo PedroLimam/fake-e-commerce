@@ -37,8 +37,9 @@ export const ContainerShoppping = styled.div`
         margin-bottom: 5px;
 
         .containerShopping__img{
-        width: 35px;
-        height: 35px;
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
         } 
 
         .containerShopping__name{
