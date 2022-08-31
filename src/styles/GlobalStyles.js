@@ -13,6 +13,7 @@ export default createGlobalStyle`
         display: flex;
         justify-content: center;
         align-items: center;
+        font-family: 'Poppins', sans-serif;
     }
 
     #root{

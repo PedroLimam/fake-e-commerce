@@ -9,7 +9,7 @@ export const ContainerPurchases = styled.div`
     right: 0;
     z-index: 10;
 
-    @media (max-width: 385px) {
+    @media (max-width: 767px) {
         width: 100vw;
     }
 

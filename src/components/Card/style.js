@@ -12,8 +12,8 @@ export const Container = styled.div`
     
 
     .container__img-product{
-        width: 144px;
-        height: 135px;
+        width: 120px;
+        height: 110px;
         padding: 5px;
         margin-bottom: 10px
     }
