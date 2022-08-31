@@ -30,6 +30,10 @@ export const ContainerShoppping = styled.div`
         :hover{
             transform: translateY(-3px)
         }
+        
+        @media (max-width: 767px) {
+            width: 25px; 
+        }
     }
 
     .containerShopping__box-productRepresentation{

@@ -11,6 +11,12 @@ export const ContainerPurchases = styled.div`
 
     @media (max-width: 767px) {
         width: 100vw;
+
+        .containerPurchases__button{
+            width: 50px;
+            height: 25px;
+            font-size: 16px;
+        }
     }
 
     .containerPurchases__products{
