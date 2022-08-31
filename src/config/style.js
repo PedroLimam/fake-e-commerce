@@ -1,22 +1,16 @@
 import { css } from "styled-components";
 
-export const testeFlex = css`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-`
 export const flexCenterEvenly = css`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 `
 
-export const flexCenter = css`
+export const flexAllCenter = css`
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 `
 
 export const colorGrayMain = '#8d99ae'

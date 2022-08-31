@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colorCardProduct, testeFlex } from "../../config/style";
+import { colorCardProduct, flexAllCenter } from "../../config/style";
 
 export const Container = styled.div`
     width: 206px;
@@ -8,9 +8,9 @@ export const Container = styled.div`
     background-color: ${colorCardProduct};
     border-radius: 10px;
     cursor: pointer;
-    ${testeFlex}
+    ${flexAllCenter}
+    flex-direction: column;
     
-
     .container__img-product{
         width: 120px;
         height: 110px;
@@ -25,6 +25,7 @@ export const Container = styled.div`
     }
 
     .container__price{
+        font-size: 16px;
         margin: 4px 0 15px;
     }
 

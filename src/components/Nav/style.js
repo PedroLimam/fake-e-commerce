@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { flexAllCenter } from "../../config/style";
 
 export const ContainerNav = styled.nav`
     position: relative;
@@ -24,8 +25,6 @@ export const ContainerNav = styled.nav`
         position: absolute;
         top: 21px;
         right: 31px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        ${flexAllCenter}
     }
 `

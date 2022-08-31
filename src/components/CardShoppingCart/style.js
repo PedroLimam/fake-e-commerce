@@ -1,19 +1,19 @@
 import styled from "styled-components";
-import { colorButtonPurchase, colorGrayMain, colorWhite, flexCenter, flexCenterEvenly } from "../../config/style";
+import { colorButtonPurchase, colorGrayMain, colorWhite, flexAllCenter, flexCenterEvenly } from "../../config/style";
 
 export const ContainerShoppping = styled.div`
     width: 260px;
     height: 112px;
+    padding: 10px;
     background-color: ${colorGrayMain};
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 10px;
     position: relative;
 
     .containerShopping__button-delete{
-        ${flexCenter}
+        ${flexAllCenter}
         width: 20px;
         height: 25px;
         padding: 2px 4px;
@@ -24,11 +24,11 @@ export const ContainerShoppping = styled.div`
         font-size: 13px;
         text-align: center;
         cursor: pointer;
-        transition: 400ms ease;
         position: absolute;
         right: 5px;
         top: 7px;
-
+        transition: 400ms ease;
+        
         :hover{
             transform: translateY(-3px)
         }
@@ -50,7 +50,7 @@ export const ContainerShoppping = styled.div`
 
         .containerShopping__name{
             width: 70%;
-            font-size: 15px;
+            font-size: 13px;
         }
     }
     
