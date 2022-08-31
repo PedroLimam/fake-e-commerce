@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colorButtonPurchase, colorGrayMain, colorWhite, flexCenter } from "../../config/style";
+import { colorButtonPurchase, colorGrayMain, colorWhite, flexCenter, flexCenterEvenly } from "../../config/style";
 
 export const ContainerShoppping = styled.div`
     width: 260px;
@@ -13,7 +13,9 @@ export const ContainerShoppping = styled.div`
     position: relative;
 
     .containerShopping__button-delete{
+        ${flexCenter}
         width: 20px;
+        height: 25px;
         padding: 2px 4px;
         background-color: ${colorButtonPurchase};
         color: ${colorWhite};
@@ -37,7 +39,7 @@ export const ContainerShoppping = styled.div`
     }
 
     .containerShopping__box-productRepresentation{
-        ${flexCenter}
+        ${flexCenterEvenly}
         margin-bottom: 5px;
 
         .containerShopping__img{
@@ -54,7 +56,7 @@ export const ContainerShoppping = styled.div`
     
     .containerShopping__box-counterQuantity{
         font-size: 20;
-        ${flexCenter}
+        ${flexCenterEvenly}
     }
 
 `

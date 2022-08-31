@@ -7,11 +7,18 @@ export const testeFlex = css`
     justify-content: center;
     text-align: center;
 `
-export const flexCenter = css`
+export const flexCenterEvenly = css`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 `
+
+export const flexCenter = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
 export const colorGrayMain = '#8d99ae'
 export const colorCardProduct = '#edf2f4'
 export const colorButtonPurchase = '#d90429'

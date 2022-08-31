@@ -13,7 +13,6 @@ export const ContainerPurchases = styled.div`
         width: 100vw;
 
         .containerPurchases__button{
-            width: 50px;
             height: 25px;
             font-size: 16px;
         }
@@ -42,7 +41,7 @@ export const ContainerPurchases = styled.div`
         color: ${colorWhite};
         border-radius: 4px;
         margin: 10px auto auto 10px;
-        width: 35px;
+        width: 50px;
         padding: 2px 4px;
         transition: 400ms ease;
 

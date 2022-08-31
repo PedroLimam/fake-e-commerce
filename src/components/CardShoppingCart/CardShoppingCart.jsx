@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { AddToCardContext } from "../../contexts/AddToCart";
 import { ButtonQuantity } from "../ButtonQuantity/ButtonQuantity";
 import { ContainerShoppping } from "./style";
+// import { BsPlusLg } from 'react-icons/bs'
+import { BsPlusLg, BsDashLg, BsXLg } from 'react-icons/bs'
 
 
 function CardShoppingCart({name, img_url, quantity}){
@@ -43,7 +45,7 @@ function CardShoppingCart({name, img_url, quantity}){
 
     return(
         <ContainerShoppping >
-            <span className="containerShopping__button-delete" onClick={deleteProduct}>X</span>
+            <span className="containerShopping__button-delete" onClick={deleteProduct}><BsXLg/></span>
 
             <div className="containerShopping__box-productRepresentation">
                 <img className="containerShopping__img" src={img_url} alt="imagem do produto" />
@@ -51,9 +53,9 @@ function CardShoppingCart({name, img_url, quantity}){
             </div>
 
             <div  className="containerShopping__box-counterQuantity">
-                <ButtonQuantity onClick={decreaseQuantity}>-</ButtonQuantity>
+                <ButtonQuantity onClick={decreaseQuantity}> <BsDashLg/> </ButtonQuantity>
                 <h2>{quantity}</h2>
-                <ButtonQuantity onClick={addQuantity}>+</ButtonQuantity>
+                <ButtonQuantity onClick={addQuantity}><BsPlusLg/></ButtonQuantity>
             </div>      
         </ContainerShoppping>
     )
