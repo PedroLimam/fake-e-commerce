@@ -14,7 +14,7 @@ function Nav({selectedProducts, updatesSelectedProducts}){
         <ContainerNav>
             {
                 modalContainerPurchases === false ? 
-                    <>                                                                                                             
+                    <>                                                                                                          
                     <img onClick={() => setModalContainerPurchases(!modalContainerPurchases)} className={`containerNav__img`} src={image} alt="uma foto" />
                     </>
                  :  <Purchases disable={disable}  updatesSelectedProducts={updatesSelectedProducts} selectedProducts={selectedProducts}/>                    

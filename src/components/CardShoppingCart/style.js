@@ -14,7 +14,7 @@ export const ContainerShoppping = styled.div`
 
     .containerShopping__button-delete{
         ${flexAllCenter}
-        width: 20px;
+        width: 25px;
         height: 25px;
         padding: 2px 4px;
         background-color: ${colorButtonPurchase};
@@ -31,10 +31,6 @@ export const ContainerShoppping = styled.div`
         
         :hover{
             transform: translateY(-3px)
-        }
-        
-        @media (max-width: 767px) {
-            width: 25px; 
         }
     }
 
@@ -55,8 +51,12 @@ export const ContainerShoppping = styled.div`
     }
     
     .containerShopping__box-counterQuantity{
-        font-size: 20;
+        font-size: 20px;
         ${flexCenterEvenly}
+        
+        h2{
+            font-size: 18px;
+        }
     }
 
 `

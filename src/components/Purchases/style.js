@@ -30,10 +30,20 @@ export const ContainerPurchases = styled.div`
     }
 
     .containerPurchases__title{
+        font-size: 16px;
         margin: 24px auto 20px 20px;
+
+        @media (max-width: 767px) {
+            font-size: 18px;
+        }
     }
     .containerPurchases__sum{
+        font-size: 16px;
         margin: 25px auto auto 20px;
+
+        @media (max-width: 767px) {
+            font-size: 18px;
+        }
     }
 
     .containerPurchases__button{
