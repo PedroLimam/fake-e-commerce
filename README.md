@@ -6,12 +6,12 @@ como ter <strong>variados produtos</strong>, conseguir <strong>adicionar e remov
 
 
 
-<strong>Acesse: https://pedrolimam.github.io/fake-e-commerce/ </strong>
+<strong>Acesse: https://fake-e-commerce-black.vercel.app/ </strong>
 
 
 ## 🛠️ Construído com
 
-<strong>ReactJs - </strong> Biblioteca JavaScripT, nessa tecnologia utilizei: componentes funcionais, props, hooks (como UseState, UseEffect e UseContext) e operadores ternários.
+<strong>ReactJs - </strong> Biblioteca JavaScript, nessa tecnologia utilizei: componentes funcionais, props, hooks (como UseState, UseEffect e UseContext) e operadores ternários.
 
 <strong>Styled-Components -</strong>Biblioteca que permite a construção de css em arquivo JavaScript (css in js), a mesma permite uso do css do componente ao mesmo nível de arquivo.
 
