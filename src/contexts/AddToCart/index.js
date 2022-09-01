@@ -5,6 +5,7 @@ export const AddToCardContext = createContext()
 function AddCardContextProvider({ children }){
   const [totalPurchase, setTotalPurchase] = useState(0)
   const [selectedProducts, setSelectedProducts] = useState([])
+  const [counterProductsPurchase, setCounterProductsPurchas] = useState(0)
 
   useEffect(() => {
     let calcTotal = 0
@@ -13,7 +14,8 @@ function AddCardContextProvider({ children }){
       calcTotal = calcTotal + selectedProducts[index].totalSales
     }
 
-      setTotalPurchase(calcTotal.toLocaleString("pt-BR"))
+    setTotalPurchase(calcTotal.toLocaleString("pt-BR"))
+    setCounterProductsPurchas(selectedProducts.length)
   }, [selectedProducts])
   
   function addProductToCart(e){
@@ -49,7 +51,7 @@ function AddCardContextProvider({ children }){
   }
 
   return (
-      <AddToCardContext.Provider value={{selectedProducts, setSelectedProducts, addProductToCart, updatesSelectedProducts, totalPurchase}} >
+      <AddToCardContext.Provider value={{selectedProducts, setSelectedProducts, addProductToCart, updatesSelectedProducts, totalPurchase, counterProductsPurchase}} >
         {children}
       </AddToCardContext.Provider>
   )

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexAllCenter } from "../../config/style";
+import { colorButtonPurchase, flexAllCenter } from "../../config/style";
 
 export const ContainerNav = styled.nav`
     position: relative;
@@ -9,10 +9,21 @@ export const ContainerNav = styled.nav`
         top: 15px;
         right: 20px;
         transition: 400ms ease;
+        cursor: pointer;
+    }
 
-        :hover{
-            transform: scale(1.1);
-        }
+    .containerNav__counter-products{
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+        border-radius: 50%;
+        background-color: ${colorButtonPurchase};
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        position: absolute;
+        right: 18px;
+        top: 11px;    
         cursor: pointer;
     }
 
