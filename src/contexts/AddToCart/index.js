@@ -18,7 +18,7 @@ function AddCardContextProvider({ children }){
   
   function addProductToCart(e){
     const newProduto = {
-      name: `${e.children[1].innerText.split(" ").splice(0,7).join(' ')}...`,
+      name: e.children[1].innerText,
       url: e.children[0].src,
       price: e.children[2].innerText,
       price2: Number(e.children[2].innerText.replace(/[^0-9-.]/g,'')),
