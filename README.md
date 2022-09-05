@@ -23,5 +23,6 @@ como ter <strong>variados produtos</strong>, conseguir <strong>adicionar e remov
 
 ### Funcionalidades a adicionar:
 - [ ] Paginação dos produtos
+- [ ] Página de detalhes ao ser clicado, com uso de rotas em React.
 - [ ] Filtros de pesquisa
 
