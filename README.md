@@ -22,6 +22,8 @@ como ter <strong>variados produtos</strong>, conseguir <strong>adicionar e remov
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
 ### Funcionalidades a adicionar:
+- [ ] Barra de pesquisa
 - [ ] Paginação dos produtos
+- [ ] Página de detalhes do produto ao ser clicado, com uso de rotas em React.
 - [ ] Filtros de pesquisa
 
