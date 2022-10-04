@@ -1,15 +1,27 @@
 import styled from "styled-components";
 import { colorButtonPurchase, flexAllCenter } from "../../config/style";
+import InputText from "../InputText/InputText";
+
 
 export const ContainerNav = styled.nav`
     position: relative;
+    height: 100%;
+    ${flexAllCenter};
+    justify-content: space-between;
     
-    .containerNav__img{
-        position: absolute;
-        top: 15px;
-        right: 20px;
+    .containerNav__img-cart{
         transition: 400ms ease;
         cursor: pointer;
+        margin-right: 15px;
+    }
+
+    .containerNav__img-logo{
+        width: 230px;
+        margin-left: 15px;
+
+        @media (max-width: 767px) {
+            display: none;
+        }
     }
 
     .containerNav__counter-products{
@@ -22,20 +34,12 @@ export const ContainerNav = styled.nav`
         font-size: 16px;
         text-align: center;
         position: absolute;
-        right: 18px;
-        top: 11px;    
+        right: 10px;
+        top: 40px;    
         cursor: pointer;
     }
 
-    .containerNav__button-quantity{
-        width: fit-content;
-        height: fit-content;
-        padding: 4px 8px;
-        text-align: center;
-        border-radius: 50%;
-        position: absolute;
-        top: 21px;
-        right: 31px;
-        ${flexAllCenter}
+    ${InputText}{
+        transform: translate(-77px, 47px);
     }
 `

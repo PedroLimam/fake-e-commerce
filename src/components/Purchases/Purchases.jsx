@@ -13,7 +13,7 @@ function Purchases({disable}){
             <h2 className="containerPurchases__title">Suas compras</h2>
 
             <div className="containerPurchases__products">
-            {selectedProducts.map((el, index) => <CardShoppingCart key={index} name={el.name} img_url={el.url} quantity={el.quantity}/>)}
+            {selectedProducts.map((el, index) => <CardShoppingCart key={index} name={el.name} price={el.price} img_url={el.url} quantity={el.quantity}/>)}
             </div>
 
             <h3 className="containerPurchases__sum">Total: R$ {totalPurchase}</h3>

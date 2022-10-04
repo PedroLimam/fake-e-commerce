@@ -2,11 +2,10 @@ import React, { useContext } from "react";
 import { AddToCardContext } from "../../contexts/AddToCart";
 import { ButtonQuantity } from "../ButtonQuantity/ButtonQuantity";
 import { ContainerShoppping } from "./style";
-// import { BsPlusLg } from 'react-icons/bs'
 import { BsPlusLg, BsDashLg, BsXLg } from 'react-icons/bs'
 
 
-function CardShoppingCart({name, img_url, quantity}){
+function CardShoppingCart({name, img_url, quantity, price}){
 
     const {selectedProducts, updatesSelectedProducts} = useContext(AddToCardContext)
 
@@ -49,7 +48,12 @@ function CardShoppingCart({name, img_url, quantity}){
 
             <div className="containerShopping__box-productRepresentation">
                 <img className="containerShopping__img" src={img_url} alt="imagem do produto" />
-                <h3 className="containerShopping__name">{name}</h3>
+                
+                <div className="containerShopping__description" >
+                    <h3 className="containerShopping__name">{name}</h3>
+                    <h3 className="containerShopping__price">{price}</h3>
+                </div>
+
             </div>
 
             <div  className="containerShopping__box-counterQuantity">

@@ -8,7 +8,7 @@ export const ButtonQuantity = styled.button`
     height: fit-content;
     width: fit-content;
     padding: 5px 7px;
-    font-size: 14px;
+    font-size: 12px;
     ${flexAllCenter};
 
     :hover{

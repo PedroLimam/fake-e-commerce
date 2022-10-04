@@ -7,15 +7,20 @@ export const ContainerPurchases = styled.div`
     height: 100vh;
     position: fixed;
     right: 0;
+    top: 0;
     z-index: 10;
 
     @media (max-width: 767px) {
-        width: 100vw;
+        width: 54vw;
 
         .containerPurchases__button{
             height: 25px;
             font-size: 16px;
         }
+    }
+
+    @media (max-width: 480px) {
+        width: 100vw;
     }
 
     .containerPurchases__products{

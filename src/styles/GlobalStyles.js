@@ -27,7 +27,7 @@ export default createGlobalStyle`
     
     header{
         width: 100%;
-        height: 100px;
+        height: 140px;
         position: fixed;
         top: 0;
         z-index: 9;

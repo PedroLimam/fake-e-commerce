@@ -4,6 +4,8 @@ import image from '../../assets/shopping-cart.png';
 import { AddToCardContext } from "../../contexts/AddToCart";
 import Purchases from "../Purchases/Purchases";
 import { ContainerNav } from "./style";
+import logoEcommerce from '../../assets/logo-ecommerce.svg';
+import InputText from "../InputText/InputText";
 
 function Nav(){
     const [modalContainerPurchases, setModalContainerPurchases] = useState(false)
@@ -14,16 +16,17 @@ function Nav(){
     }
 
     return(
-        <ContainerNav>
+        <>
+            <ContainerNav>                     
+                <img className={`containerNav__img-logo`} src={logoEcommerce} alt="imagem logomarca" />
+                <InputText/>
+                <img onClick={() => setModalContainerPurchases(!modalContainerPurchases)} className={`containerNav__img-cart`} src={image} alt="uma foto" />
+                <span onClick={() => setModalContainerPurchases(!modalContainerPurchases)} className="containerNav__counter-products"> {counterProductsPurchase} </span>
+            </ContainerNav>
             {
-                modalContainerPurchases === false ? 
-                    <>                                                                                                          
-                    <img onClick={() => setModalContainerPurchases(!modalContainerPurchases)} className={`containerNav__img`} src={image} alt="uma foto" />
-                    <span onClick={() => setModalContainerPurchases(!modalContainerPurchases)} className="containerNav__counter-products"> {counterProductsPurchase} </span>
-                    </>
-                 :  <Purchases disable={disable}/>                    
+                modalContainerPurchases && <Purchases disable={disable}/>   
             }             
-        </ContainerNav>
+        </>
     )
 }
 
