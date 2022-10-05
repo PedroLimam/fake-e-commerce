@@ -59,6 +59,8 @@ export const ContainerPurchases = styled.div`
         width: 50px;
         padding: 2px 4px;
         transition: 400ms ease;
+        position: absolute;
+        right: 5px;
 
         :hover{
             transform: translateX(-3px)
