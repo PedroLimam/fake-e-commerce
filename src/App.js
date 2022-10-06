@@ -5,7 +5,8 @@ import AddCardContextProvider from "./contexts/AddToCart";
 
 function App() {
   const [arrayProducts, setArrayProducts] = useState([])
- 
+  const [filterArray, setFilterArray] = useState(arrayProducts)
+
   useEffect(() => {
     async function getData(){
       const getApi = await fetch('https://fakestoreapi.com/products')
@@ -13,19 +14,27 @@ function App() {
       response.map( product => product.title = `${product.title.split(" ", 7).join(" ")}...` )
 
       setArrayProducts(response)
+      setFilterArray(response)
     }
 
     getData()
   },[])
+
+  function search(searchInput){ 
+    const researchedInput = searchInput.toLowerCase()
+    const arrayResearched = arrayProducts.filter(el => el.title.toLowerCase().includes(researchedInput))
+    
+    setFilterArray(arrayResearched)
+  }
  
   return (
     <AddCardContextProvider> 
       <header>
-        <Nav/>
+        <Nav search={search} />
       </header>
 
       <main>
-        {arrayProducts.map(el => <Card key={el.id} name={el.title} price={el.price} img_url={el.image}/>)}
+        {filterArray.map(el => <Card key={el.id} name={el.title} price={el.price} img_url={el.image}/>)}
       </main>   
     </AddCardContextProvider>
   );

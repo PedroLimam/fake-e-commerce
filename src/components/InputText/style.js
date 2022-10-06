@@ -34,5 +34,4 @@ export const ContainerBox = styled.div`
     @media (max-width: 767px) {
         transform: translate(calc(50vw - 139px), 44px);
     }
-
-`
+`;
