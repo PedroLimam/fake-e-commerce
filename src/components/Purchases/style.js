@@ -44,7 +44,7 @@ export const ContainerPurchases = styled.div`
     }
     .containerPurchases__sum{
         font-size: 16px;
-        margin: 25px auto auto 20px;
+        margin: 50px auto auto 20px;
 
         @media (max-width: 767px) {
             font-size: 18px;
