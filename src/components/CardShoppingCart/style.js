@@ -4,7 +4,7 @@ import { colorButtonPurchase, colorGrayMain, colorWhite, flexAllCenter} from "..
 export const ContainerShoppping = styled.div`
     width: 260px;
     height: 112px;
-    background-color: ${colorGrayMain};
+    box-shadow: -1px 0px 17px -12px rgb(0 0 0 / 75%);
     border-radius: 8px;
     position: relative;
     ${flexAllCenter}
