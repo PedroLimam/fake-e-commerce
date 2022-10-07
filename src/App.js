@@ -5,13 +5,18 @@ import AddCardContextProvider from "./contexts/AddToCart";
 
 function App() {
   const [arrayProducts, setArrayProducts] = useState([])
-  const [filterArray, setFilterArray] = useState(arrayProducts)
+  const [filterArray, setFilterArray] = useState([])
 
   useEffect(() => {
     async function getData(){
       const getApi = await fetch('https://fakestoreapi.com/products')
       const response = await getApi.json()
-      response.map( product => product.title = `${product.title.split(" ", 7).join(" ")}...` )
+      
+      for(let produto in response){
+        if(response[produto].title.split(" ").length > 7){
+          response[produto].title = `${response[produto].title.split(" ", 7).join(" ")}...`
+        }
+      }
 
       setArrayProducts(response)
       setFilterArray(response)
