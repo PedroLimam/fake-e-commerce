@@ -23,5 +23,5 @@ como ter <strong>variados produtos</strong>, conseguir <strong>adicionar e remov
 
 ### Funcionalidades a adicionar:
 - [x] Barra de pesquisa com funcionalidade
-- [ ] Paginação dos produtos
+- [X] Paginação dos produtos
 - [ ] Página de detalhes do produto ao ser clicado, com uso de rotas em React.
