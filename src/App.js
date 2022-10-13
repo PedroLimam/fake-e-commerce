@@ -48,7 +48,7 @@ function App() {
         {itensFiltered.map(el => <Card key={el.id} name={el.title} price={el.price} img_url={el.image}/>)}
       </main>   
 
-      <Pagination filterArray={filterArray} setCurrentPage={setCurrentPage}/>
+      <Pagination filterArray={filterArray} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
     </AddCardContextProvider>
   );
 }

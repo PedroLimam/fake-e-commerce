@@ -56,4 +56,8 @@ export default createGlobalStyle`
         color: ${colorBlackGeneral};
         background-color: ${colorCardProduct};
     }
+
+    .selected{
+        opacity: 0.6;
+    }
 `
