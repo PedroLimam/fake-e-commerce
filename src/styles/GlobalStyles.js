@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { colorGrayMain } from "../config/style";
+import { colorBlackGeneral, colorCardProduct, colorGrayMain } from "../config/style";
 
 export default createGlobalStyle`   
     *{
@@ -47,5 +47,13 @@ export default createGlobalStyle`
     button{
         border: none;
         cursor: pointer;
+    }
+
+    .btn-page{
+        margin: 5px;
+        padding: 6px 10px;
+        border-radius: 4px;
+        color: ${colorBlackGeneral};
+        background-color: ${colorCardProduct};
     }
 `

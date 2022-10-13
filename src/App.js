@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
 import Card from "./components/Card/Card";
 import Nav from "./components/Nav/Nav";
+import Pagination from "./components/Pagination/Pagination";
 import AddCardContextProvider from "./contexts/AddToCart";
 
 function App() {
   const [arrayProducts, setArrayProducts] = useState([])
   const [filterArray, setFilterArray] = useState([])
+  const [currentPage, setCurrentPage] = useState(0)
+  const itensPerPage = 8
+  const startIndex = currentPage * itensPerPage
+  const endIndex = startIndex + itensPerPage
+  const itensFiltered = filterArray.slice(startIndex, endIndex)
 
   useEffect(() => {
     async function getData(){
@@ -39,8 +45,10 @@ function App() {
       </header>
 
       <main>
-        {filterArray.map(el => <Card key={el.id} name={el.title} price={el.price} img_url={el.image}/>)}
+        {itensFiltered.map(el => <Card key={el.id} name={el.title} price={el.price} img_url={el.image}/>)}
       </main>   
+
+      <Pagination filterArray={filterArray} setCurrentPage={setCurrentPage}/>
     </AddCardContextProvider>
   );
 }
